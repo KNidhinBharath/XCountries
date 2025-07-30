@@ -15,9 +15,14 @@ const Main = () => {
 
     async function main() {
 
-        const response = await axios.get('https://xcountries-backend.azurewebsites.net/all')
-        console.log(response.data)
-        setData(response.data)
+        try {
+            const response = await axios.get('https://xcountries-backend.azurewebsites.net/all')
+            console.log(response.data)
+            setData(response.data)
+        } catch (error) {
+            console.error('Error fetching data:')
+        }
+       
        
     }
 
